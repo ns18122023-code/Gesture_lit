@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - Gesture_lit</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Gesture_lit</div>
+    <div class="nav-links">
+        <a href="profile.html">Profile</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
+</nav>
+
+<section class="home-section">
+    <h1 id="welcomeText">Welcome to Gesture_lit</h1>
+
+    <input type="text" id="searchInput" placeholder="Search books..." onkeyup="searchBooks()">
+
+    <br>
+
+    <button class="continue-btn" onclick="continueReading()">
+        Continue Reading
+    </button>
+
+    <div class="books-container" id="booksContainer">
+
+        <div class="book-card">
+            <img src="images/book1.jpg" alt="Book">
+            <h3>2 States</h3>
+            <p>Category: Romance</p>
+            <button onclick="readBook('sample.pdf')">Read</button>
+            <button onclick="purchaseBook('2 States')">Purchase</button>
+        </div>
+
+        <div class="book-card">
+            <img src="images/book2.jpg" alt="Book">
+            <h3>Until love sets us apart</h3>
+            <p>Category: Romance</p>
+            <button onclick="readBook('Until_Love_Sets_Us_Apart_.pdf')">Read</button>
+            <button onclick="purchaseBook('Until love sets us apart')">Purchase</button>
+        </div>
+
+    </div>
+</section>
+
+<script src="js/home.js"></script>
+</body>
+</html>

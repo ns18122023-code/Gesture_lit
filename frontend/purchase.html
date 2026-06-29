@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Purchase - Gesture_lit</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        #paymentMethod {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 12px;
+            border: 2px solid #38bdf8;
+            background-color: #0f172a;
+            color: #38bdf8;
+            font-size: 18px;
+            font-weight: bold;
+            outline: none;
+        }
+
+        #paymentMethod option {
+            background-color: #ffffff;
+            color: #000000;
+            font-size: 18px;
+            padding: 12px;
+        }
+
+        #paymentMethod:focus {
+            border-color: #0ea5e9;
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+        }
+
+        #paymentDetail {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            border: 2px solid #38bdf8;
+            background: #ffffff;
+            color: #000000;
+            font-size: 17px;
+            outline: none;
+        }
+
+        #paymentDetail::placeholder {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="purchase-box">
+    <h1>Purchase Book</h1>
+    <h2 id="bookName"></h2>
+
+    <div class="purchase-card">
+        <h3>Softcopy</h3>
+        <p>Price: ₹99</p>
+        <button onclick="openSoftcopyPayment()">Buy Softcopy</button>
+    </div>
+
+    <div class="purchase-card">
+        <h3>Hardcopy</h3>
+        <p>Price: ₹299</p>
+
+        <input type="text" id="address" placeholder="Enter delivery address">
+        <input type="text" id="phone" placeholder="Enter phone number">
+
+        <button onclick="openHardcopyPayment()">Buy Hardcopy</button>
+    </div>
+
+    <button onclick="window.location.href='home.html'">Back to Home</button>
+</div>
+
+<div class="payment-modal" id="paymentModal">
+    <div class="payment-box">
+        <h2>Payment Gateway</h2>
+        <p id="paymentAmount">Amount: ₹0</p>
+
+        <select id="paymentMethod">
+            <option value="">Select Payment Method</option>
+            <option value="UPI">UPI</option>
+            <option value="Card">Debit/Credit Card</option>
+            <option value="COD">Cash on Delivery</option>
+        </select>
+
+        <input type="text" id="paymentDetail" placeholder="Enter UPI ID or Card Number">
+
+        <button onclick="confirmPayment()">Pay Now</button>
+        <button onclick="closePaymentGateway()">Cancel</button>
+    </div>
+</div>
+
+<script src="js/purchase.js"></script>
+</body>
+</html>

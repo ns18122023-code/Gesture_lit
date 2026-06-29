@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile - Gesture_lit</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Gesture_lit</div>
+
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
+</nav>
+
+<div class="profile-container">
+
+    <h1>User Profile</h1>
+
+    <div class="profile-card">
+
+        <h2 id="userName"></h2>
+        <p id="userEmail"></p>
+
+    </div>
+
+    <!-- Upload Section -->
+
+    <div class="upload-section">
+
+        <h2>Upload Document</h2>
+
+        <input type="file" id="fileInput">
+
+        <button onclick="uploadDocument()">
+            Upload
+        </button>
+
+    </div>
+
+    <!-- Uploaded Documents -->
+
+    <div class="documents-section">
+
+        <h2>Your Uploaded Documents</h2>
+
+        <ul id="documentList"></ul>
+
+    </div>
+
+    <!-- Reading History -->
+
+    <div class="history-section">
+
+        <h2>Reading History</h2>
+
+        <p>No reading history yet.</p>
+
+    </div>
+    <div class="bookmarks-section">
+    <h2>Bookmarks</h2>
+    <ul id="bookmarkList"></ul>
+    </div>
+
+    <!-- Purchased Books -->
+
+    <div class="purchase-history">
+
+        <h2>Purchased Books</h2>
+
+        <p>No purchased books yet.</p>
+
+    </div>
+
+</div>
+
+<script src="js/profile.js"></script>
+
+</body>
+</html>

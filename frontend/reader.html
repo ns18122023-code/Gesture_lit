@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reader - Gesture_lit</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+</head>
+<body>
+
+<div class="reader-container">
+    <h1 id="readerTitle">Gesture PDF Reader</h1>
+
+    <div class="reader-main">
+        <div class="pdf-section">
+          <iframe
+           id="pdfFrame"
+           style="width:100%; height:650px; border:none; border-radius:18px; background:white;"
+         ></iframe>
+         
+
+            <div class="reader-controls">
+                <button onclick="prevPage()">Previous</button>
+                <span id="pageInfo"></span>
+                <button onclick="nextPage()">Next</button>
+                <button onclick="addBookmark()">Bookmark Page</button>
+            </div>
+        </div>
+
+        <div class="ai-side">
+            <h2>AI Tools</h2>
+            <button onclick="summarizeCurrentPage()">Summarize</button>
+            <button onclick="translateCurrentPage()">Translate</button>
+            <button onclick="speakCurrentPage()">Speak</button>
+            <button onclick="stopSpeech()">Stop</button>
+            <button onclick="addHighlight()">Add Highlight Note</button>
+            <button onclick="showHighlights()">Show Highlights</button>
+
+            <div id="aiResult"></div>
+        </div>
+    </div>
+
+    <video id="video" width="500" height="350" autoplay muted playsinline></video>
+
+    <p id="gestureText">Allow camera and move your index finger left/right. Make fist to close book.</p>
+
+    <button class="back-btn" onclick="window.location.href='home.html'">Back to Home</button>
+</div>
+
+<script src="js/reader.js"></script>
+<script src="js/gesture.js"></script>
+<script src="js/ai.js"></script>
+
+</body>
+</html>
